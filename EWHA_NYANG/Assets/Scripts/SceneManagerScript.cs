@@ -20,4 +20,9 @@ public class SceneManagerScript : MonoBehaviour
         Scene game = SceneManager.GetSceneByName("Marker Scene");
         GameObject[] obj = game.GetRootGameObjects();
     }
+
+    public void text_click()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }
