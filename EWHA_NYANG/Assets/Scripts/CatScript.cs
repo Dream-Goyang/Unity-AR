@@ -27,8 +27,12 @@ public class CatScript : MonoBehaviour
             if (hit.collider.tag == "cat")
             {
                 text.text = "포획 성공!";
+                Destroy(hit.collider.gameObject);
                 hit.collider.gameObject.SetActive(false);
             }
+
+            //text.text = "포획 성공!";
+            //hit.collider.gameObject.SetActive(false);
 
         }
     }
