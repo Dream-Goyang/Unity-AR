@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - cat
+  - cat1
+  - cat2
+  - cat3
+  - cat4
   layers:
   - Default
   - TransparentFX
