@@ -17,12 +17,17 @@ public class SceneManagerScript : MonoBehaviour
 
     public void btn_check()
     {
-        Scene game = SceneManager.GetSceneByName("Marker Scene");
-        GameObject[] obj = game.GetRootGameObjects();
+        //Scene game = SceneManager.GetSceneByName("Marker Scene");
+        //GameObject[] obj = game.GetRootGameObjects();
+
+        PlayerPrefs.DeleteAll();
+
+        Debug.Log("delete all cat data");
     }
 
     public void text_click()
     {
         SceneManager.LoadScene("Main");
     }
+
 }

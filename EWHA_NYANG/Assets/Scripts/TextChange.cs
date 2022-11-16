@@ -5,18 +5,15 @@ using UnityEngine.UI;
 
 public class TextChange : MonoBehaviour
 {
-    Text maintext;
-    Text subtext;
+    Text text;
 
-    // Start is called before the first frame update
-    void Start()
+    void Cat_Lost()
     {
-        
+        text.text = "고양이를 찾아보자!";
     }
 
-    // Update is called once per frame
-    void Update()
+    void Cat_Found()
     {
-        
+        text.text = "고양이를 잡아보자!";
     }
 }
