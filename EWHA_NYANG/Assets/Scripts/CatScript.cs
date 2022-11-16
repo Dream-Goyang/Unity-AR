@@ -24,31 +24,33 @@ public class CatScript : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(touch.position);
             Physics.Raycast(ray, out hit);
 
+            Debug.Log("touch");
+
             if (hit.collider.tag == "cat")
             {
+                Debug.Log("Catch cat");
                 text.text = "포획 성공!";
                 Destroy(hit.collider.gameObject);
                 hit.collider.gameObject.SetActive(false);
+
+                //몇초 뒤 다시 텍스트 변환
+                StartCoroutine(delayTime());
+                text.text = "고양이를 찾아보자!";
+
+                PlayerPrefs.SetString(hit.collider.gameObject.name, "Yes");
+                Debug.Log(hit.collider.gameObject.name + " -> made data!!");
             }
-
-            //text.text = "포획 성공!";
-            //hit.collider.gameObject.SetActive(false);
-
+            else
+            {
+                Debug.Log("not cat");
+            }
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    Touch touch = Input.GetTouch(0);
-    //    RaycastHit hit;
-    //    Ray ray = Camera.main.ScreenPointToRay(touch.position);
-    //    Physics.Raycast(ray, out hit);
-
-    //    if (hit.collider.tag == "cat")
-    //    {
-    //        text.text = "포획 성공!";
-    //        Destroy(collision.gameObject);
-    //        gameObject.SetActive(false);
-    //    }
-    //}
+    IEnumerator delayTime()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("time = " + Time.time);
+    }
+    
 }
